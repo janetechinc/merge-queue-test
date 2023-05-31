@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  test-job:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: test-job
+          command: "echo 'hello world'"
+
+workflows:
+  ci:
+    jobs:
+      - test-job
