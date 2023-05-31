@@ -7,7 +7,7 @@ jobs:
     steps:
       - run:
           name: test-job
-          command: "echo 'hello world' && sleep 300"
+          command: "echo 'hello world' && sleep 600"
 
 workflows:
   ci:
