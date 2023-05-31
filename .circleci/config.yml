@@ -1,6 +1,13 @@
 version: 2.1
 
 jobs:
+  build-job:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: build-job
+          command: "echo 'building now!'"
   test-job:
     docker:
       - image: cimg/base:stable
@@ -8,8 +15,8 @@ jobs:
       - run:
           name: test-job
           command: "echo 'hello world' && sleep 60"
-
 workflows:
   ci:
     jobs:
+      - build-job
       - test-job
